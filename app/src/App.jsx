@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import styles from './App.module.css';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
     <div class={styles.App}>
       <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
+        {/* <img src={logo} class={styles.logo} alt="logo" />
         <p>
           Edit <code>src/App.jsx</code> and save to reload.
         </p>
@@ -16,7 +17,8 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn Solid
-        </a>
+        </a> */}
+        <HomePage />
       </header>
     </div>
   );
