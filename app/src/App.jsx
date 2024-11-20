@@ -1,23 +1,13 @@
 import logo from './logo.svg';
 import styles from './App.module.css';
 import HomePage from './pages/HomePage';
+import GLTFViewer from './components/GLTFViewer';
 
 function App() {
   return (
     <div class={styles.App}>
+      <GLTFViewer modelPath="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf" />
       <header class={styles.header}>
-        {/* <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a> */}
         <HomePage />
       </header>
     </div>

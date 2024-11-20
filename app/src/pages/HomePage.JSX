@@ -1,5 +1,6 @@
 import styles from './HomePage.module.css';
 import Navbar from '../components/NavBar';
+import ThreeScene from '../components/ThreeScene';
 
 export default function HomePage() {
     return (

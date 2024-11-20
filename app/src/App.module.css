@@ -2,6 +2,27 @@
   text-align: center;
 }
 
+.App {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.canvasContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.header {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .logo {
   animation: logo-spin infinite 20s linear;
   height: 40vmin;
