@@ -5,7 +5,7 @@ import GLTFViewer from "../components/GLTFViewer";
 
 export default function HomePage() {
   return (
-    <div class={styles.container}>
+    <div className={styles.root}>
       <Navbar />
       <div class={styles.circle}>
         <GLTFViewer modelPath="https://raw.githubusercontent.com/Mcen25/VR-Assets-Dev/refs/heads/main/Earth%20by%20Denis%20Cliofas/scene.gltf" />

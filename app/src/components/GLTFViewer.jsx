@@ -37,6 +37,8 @@ const GLTFViewer = (props) => {
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
+    controls.enableZoom = false; // Disable zooming
+    controls.enablePan = false;
 
     // Enhanced lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
@@ -47,7 +49,7 @@ const GLTFViewer = (props) => {
     directionalLight.castShadow = true;
     scene.add(directionalLight);
 
-    camera.position.set(0, 1, 5);
+    camera.position.set(0, 1, 1.3);
 
     const loader = new GLTFLoader();
     loader.load(
