@@ -1,16 +1,18 @@
+// NavBar.jsx
+import { A } from "@solidjs/router";
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
-    return (
-      <nav class={styles.navbar}>
-        <div class={styles.navbarContent}>
-          <a href="/" class={styles.navbarBrand}>AstralFables</a>
-          <ul class={styles.navLinks}>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-    );
+  return (
+    <nav class={styles.navbar}>
+      <div class={styles.navbarContent}>
+        <A href="/" class={styles.navbarBrand}>AstralFables</A>
+        <ul class={styles.navLinks}>
+          <li><A href="/">Home</A></li>
+          <li><A href="/about">About</A></li>
+          <li><A href="/contact">Contact</A></li>
+        </ul>
+      </div>
+    </nav>
+  );
 }
