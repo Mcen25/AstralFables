@@ -1,0 +1,26 @@
+/* LoginPage.module.css */
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .loginContainer {
+    margin-top: 100px;
+    text-align: center;
+  }
+  
+  .loginButton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px auto;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .loginButton img {
+    width: 24px;
+    height: 24px;
+  }
