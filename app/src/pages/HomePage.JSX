@@ -1,6 +1,6 @@
 import styles from "./HomePage.module.css";
 import Navbar from "../components/NavBar";
-import ThreeScene from "../components/ThreeScene";
+import Audio from "../components/Audio";
 import GLTFViewer from "../components/GLTFViewer";
 
 export default function HomePage() {

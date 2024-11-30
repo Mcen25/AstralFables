@@ -44,7 +44,7 @@
   justify-content: center;
   cursor: pointer;
   position: relative;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .button::before {
