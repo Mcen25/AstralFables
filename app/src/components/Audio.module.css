@@ -1,0 +1,34 @@
+.audioPlayer {
+  /* Basic styling */
+  width: 300px;
+  height: 50px;
+  margin: 10px 0;
+}
+
+/* Style the audio controls */
+.audioPlayer::-webkit-media-controls-panel {
+  background-color: #f1f1f1;
+  border-radius: 8px;
+}
+
+.audioPlayer::-webkit-media-controls-play-button {
+  background-color: #007bff;
+  border-radius: 50%;
+}
+
+.audioPlayer::-webkit-media-controls-timeline {
+  background-color: #ddd;
+  border-radius: 25px;
+  margin: 0 15px;
+}
+
+.audioPlayer::-webkit-media-controls-current-time-display,
+.audioPlayer::-webkit-media-controls-time-remaining-display {
+  color: #333;
+}
+
+.audioPlayer::-webkit-media-controls-volume-slider {
+  background-color: #ddd;
+  border-radius: 25px;
+  padding: 0 5px;
+}

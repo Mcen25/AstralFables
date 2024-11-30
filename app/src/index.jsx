@@ -2,6 +2,7 @@
 import { render } from 'solid-js/web';
 
 import './index.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import App from './App';
 
 const root = document.getElementById('root');
