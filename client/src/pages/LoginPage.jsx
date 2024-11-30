@@ -3,19 +3,19 @@ import Navbar from "../components/NavBar";
 
 export default function LoginPage() {
   const handleGoogleLogin = () => {
-    // Handle Google login
+    window.location.href = "http://localhost:5000/auth/google";
   };
 
   const handleMicrosoftLogin = () => {
-    // Handle Microsoft login
+    window.location.href = "http://localhost:5000/auth/microsoft";
   };
 
   const handleGitHubLogin = () => {
-    // Handle GitHub login
+    window.location.href = "http://localhost:5000/auth/github";
   };
 
   const handleDiscordLogin = () => {
-    // Handle Discord login
+    window.location.href = "http://localhost:5000/auth/discord";
   };
 
   return (
