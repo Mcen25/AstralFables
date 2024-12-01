@@ -1,6 +1,6 @@
 import { createEffect, onCleanup } from 'solid-js';
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.jsx';
 
 const ThreeScene = () => {
   let container;

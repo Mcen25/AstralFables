@@ -1,8 +1,8 @@
 // App.jsx
 import { Router, Route } from "@solidjs/router";
-import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
-import LoginPage from "./pages/LoginPage";
+import HomePage from "./pages/HomePage.jsx";
+import AboutPage from "./pages/AboutPage.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
 
 function App() {
   return (

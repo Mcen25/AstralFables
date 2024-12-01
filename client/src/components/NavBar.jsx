@@ -1,6 +1,6 @@
 // NavBar.jsx
 import { A } from "@solidjs/router";
-import styles from "./Navbar.module.css";
+import styles from "./NavBar.module.css";
 
 export default function Navbar() {
   return (

@@ -1,7 +1,7 @@
 import styles from "./HomePage.module.css";
-import Navbar from "../components/NavBar";
-import Audio from "../components/Audio";
-import GLTFViewer from "../components/GLTFViewer";
+import Navbar from "../components/NavBar.jsx";
+import Audio from "../components/Audio.jsx";
+import GLTFViewer from "../components/GLTFViewer.jsx";
 
 export default function HomePage() {
   return (

@@ -1,5 +1,5 @@
 import styles from "./LoginPage.module.css";
-import Navbar from "../components/NavBar";
+import Navbar from "../components/NavBar.jsx";
 
 export default function LoginPage() {
   const handleGoogleLogin = () => {
