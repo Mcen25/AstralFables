@@ -1,6 +1,5 @@
 import styles from "./LoginPage.module.css";
 import Navbar from "../components/NavBar";
-import { A } from "@solidjs/router";
 
 export default function LoginPage() {
   const handleGoogleLogin = () => {
@@ -25,14 +24,15 @@ export default function LoginPage() {
       <div className={styles.columnContainer}>
         <div className={styles.section}>
           <div className={styles.loginSection}>
-            <h2>Login</h2>
-
+            <h2>Sign Up</h2>
+            <h3>Username</h3>
+            <input type="text" placeholder="Enter your username" />
             <h3>Email</h3>
             <input type="text" placeholder="Enter your email" />
             <h3>Password</h3>
             <input type="password" placeholder="Enter your password" />
           </div>
-          <button className={styles.loginMainButton}>LOGIN</button>
+          <button className={styles.loginMainButton}>Create an Account</button>
           <div className={styles.horizontalLineContainer}>
             <hr className={styles.horizontalLine} />
             <span className={styles.horizontalLineText}>or</span>
@@ -56,16 +56,6 @@ export default function LoginPage() {
             </button>
           </div>
         </div>
-        <div className={styles.section}>
-          <h2>Section 1</h2>
-          <p>Content for the first section.</p>
-        </div>
-      </div>
-      <div className={styles.accountText}>
-        Don't have an
-        <A href="/register" className={styles.accountLink}>
-          account?
-        </A>
       </div>
     </div>
   );
