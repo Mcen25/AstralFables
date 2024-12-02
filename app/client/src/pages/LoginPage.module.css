@@ -127,3 +127,21 @@ input[type="password"]:focus {
   color: #555;
   font-size: 14px;
 }
+
+.accountText {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.accountLink {
+  color: #311fcc;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.accountLink:hover {
+  color: #2b28cc;
+  text-decoration: underline;
+}

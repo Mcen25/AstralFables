@@ -1,5 +1,6 @@
 import styles from "./LoginPage.module.css";
 import Navbar from "../components/NavBar";
+import { A } from "@solidjs/router";
 
 export default function LoginPage() {
   const handleGoogleLogin = () => {
@@ -59,6 +60,12 @@ export default function LoginPage() {
           <h2>Section 1</h2>
           <p>Content for the first section.</p>
         </div>
+      </div>
+      <div className={styles.accountText}>
+        Don't have an
+        <A href="/register" className={styles.accountLink}>
+          account?
+        </A>
       </div>
     </div>
   );
