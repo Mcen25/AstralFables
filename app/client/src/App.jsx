@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterAccount from "./pages/RegisterAccount";
+import ContentPage from "./pages/ContentPage";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Route path="/" component={HomePage} />
       <Route path="/about" component={AboutPage} />
       <Route path="/login" component={LoginPage} />
+      <Route path="/content" component={ContentPage} />
       <Route path="/register" component={RegisterAccount} />
     </Router>
   );
