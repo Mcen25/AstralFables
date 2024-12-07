@@ -14,10 +14,10 @@ export class Users {
   email: string;
 
   @Prop()
-  createdAt: string;
+  createdAt: Date;
 
   @Prop()
-  updatedAt: string;
+  updatedAt: Date;
 
   @Prop()
   passwordHash: string;
