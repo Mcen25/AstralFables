@@ -10,17 +10,17 @@ export class Users {
   @Prop()
   username: string;
 
-  @Prop()
+  @Prop({ required: true, unique: true })
   email: string;
 
   @Prop()
-  createdAt: Date;
+  password?: string;
 
   @Prop()
-  updatedAt: Date;
+  provider?: string;
 
   @Prop()
-  passwordHash: string;
+  providerId?: string;
 }
 
 export const UsersSchema = SchemaFactory.createForClass(Users);
