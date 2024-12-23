@@ -7,13 +7,13 @@ export type UsersDocument = HydratedDocument<Users>;
 export class Users {
   _id: ObjectId;
 
-  @Prop()
+  @Prop({ required: true })
   username: string;
 
   @Prop({ required: true, unique: true })
   email: string;
 
-  @Prop()
+  @Prop({ required: true })
   password?: string;
 
   @Prop()
@@ -24,3 +24,8 @@ export class Users {
 }
 
 export const UsersSchema = SchemaFactory.createForClass(Users);
+
+UsersSchema.pre('save', function (next) {
+  this.username = this.username.trim();
+  next();
+});
