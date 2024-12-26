@@ -8,6 +8,11 @@ import { Users } from './schemas/users.schema';
 export class UsersService {
   constructor(@InjectRepository(Users) private usersRepo: Repository<Users>) {}
 
+  async findUserByName(username: string): Promise<Users | null> {
+    const users = await this.usersRepo.find({ where: { username } });
+    return users.length > 0 ? users[0] : null;
+  }
+
   findAll() {
     return this.usersRepo.find();
   }
