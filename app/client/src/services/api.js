@@ -1,4 +1,6 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+import { api } from '../services/api';
+
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000/';
 
 export const api = {
   async get(endpoint) {
@@ -8,7 +10,8 @@ export const api = {
         'Content-Type': 'application/json'
       }
     });
-    return response.json();
+    const data = await response.json();
+    return data;
   },
 
   async post(endpoint, data) {

@@ -37,10 +37,9 @@ const GLTFViewer = (props) => {
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
-    controls.enableZoom = false; // Disable zooming
+    controls.enableZoom = false;
     controls.enablePan = false;
 
-    // Enhanced lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
     scene.add(ambientLight);
 
@@ -58,7 +57,6 @@ const GLTFViewer = (props) => {
         console.log("Model loaded successfully");
         scene.add(gltf.scene);
 
-        // Center and auto-scale model
         const box = new THREE.Box3().setFromObject(gltf.scene);
         const center = box.getCenter(new THREE.Vector3());
         const size = box.getSize(new THREE.Vector3());

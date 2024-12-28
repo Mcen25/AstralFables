@@ -1,4 +1,3 @@
-// client/vite.config.js
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 
@@ -10,12 +9,11 @@ export default defineConfig({
       '/api': {
         target: 'http://localhost:4000',
         changeOrigin: true,
-        // Optionally strip /api prefix when forwarding to backend
-        // rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
   },
+  assetsInclude: ['**/*.gltf', '**/*.bin'],
   build: {
-    target: 'esnext',
-  },
+    target: 'esnext'
+  }
 });
