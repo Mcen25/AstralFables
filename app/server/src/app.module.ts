@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Users } from './users/entities/users.entity'; // Import the Users entity
 import * as dotenv from 'dotenv';
 dotenv.config();
 
@@ -20,7 +21,7 @@ dotenv.config();
       type: 'mongodb',
       url: process.env.MongoDB_URI,
       synchronize: false, // FIXME: change this later 
-      entities: [],
+      entities: [Users], // Register the Users entity
     }),
   ],
   controllers: [AppController],

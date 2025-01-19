@@ -6,6 +6,12 @@ export default function RegisterAccount() {
   const [username, setUsername] = createSignal("");
   const [email, setEmail] = createSignal("");
   const [password, setPassword] = createSignal("");
+  const [showPopup, setShowPopup] = createSignal(false);
+
+  const handReturnHome = () => {
+    window.location.href = "/";
+  };
+
   const handleGoogleLogin = () => {
     // Handle Google login
   };
@@ -23,15 +29,37 @@ export default function RegisterAccount() {
   };
 
   const handleCreateAccount = async () => {
-    await fetch("/users/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        username: username(),
-        email: email(),
-        password: password(),
-      }),
-    });
+    try {
+      if (email().length === 0 || password().length === 0) {
+        throw new Error("Email and password are required");
+      } else {
+        const emailCheckResponse = await fetch(`/users/check-email?email=${email()}`);
+        const emailCheckData = await emailCheckResponse.json();
+        if (emailCheckData.exists) {
+          throw new Error("Email is already in use");
+        } else {
+          const response = await fetch("/users/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              username: username(),
+              email: email(),
+              password: password(),
+            }),
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+          console.log("Account created successfully:", data);
+          setShowPopup(true);
+        }
+      }
+    } catch (error) {
+      console.error("Error creating account:", error);
+    }
   };
 
   return (
@@ -66,6 +94,12 @@ export default function RegisterAccount() {
           >
             Create an Account
           </button>
+          {showPopup() && (
+            <div className={styles.popup}>
+              <span>Account created successfully!</span>
+              <button onClick={handReturnHome}>Return Home</button>
+            </div>
+          )}
           <div className={styles.horizontalLineContainer}>
             <hr className={styles.horizontalLine} />
             <span className={styles.horizontalLineText}>or</span>

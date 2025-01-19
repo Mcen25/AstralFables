@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ObjectId } from 'mongodb';
-import { Users } from './schemas/users.schema';
+import { Users } from './entities/users.entity'; // Import the Users entity
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
@@ -11,6 +11,11 @@ export class UsersService {
 
   async findUserByName(username: string): Promise<Users | null> {
     const users = await this.usersRepo.find({ where: { username } });
+    return users.length > 0 ? users[0] : null;
+  }
+
+  async findUserByEmail(email: string): Promise<Users | null> {
+    const users = await this.usersRepo.find({ where: { email } });
     return users.length > 0 ? users[0] : null;
   }
 

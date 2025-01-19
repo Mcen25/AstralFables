@@ -1,12 +1,11 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { UsersService } from 'src/users/users.service';
-import { ObjectId } from 'mongoose';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
 
 type AuthInput = { username: string; password: string };
-type SignInData = { userId: ObjectId; username: string };
-type AuthResult = { accessToken: string; userId: ObjectId; username: string };
+type SignInData = { userId: string; username: string }; // Change ObjectId to string
+type AuthResult = { accessToken: string; userId: string; username: string };
 
 @Injectable()
 export class AuthService {
@@ -27,7 +26,7 @@ export class AuthService {
   async validateUser(input: AuthInput): Promise<SignInData | null> {
     const user = await this.usersService.findUserByName(input.username);
     if (user && (await bcrypt.compare(input.password, user.password))) {
-      return { userId: user._id, username: user.username };
+      return { userId: user._id.toString(), username: user.username }; // Convert ObjectId to string
     }
     return null;
   }
