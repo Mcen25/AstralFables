@@ -11,7 +11,8 @@ export default function HomePage() {
   return (
     <div className={styles.root}>
       <Navbar />
-      <GLTFPage modelPath={blackholeModel} />
+      <GLTFPage modelPath={shibaModel} />
+
       <button class={styles.button}></button>
     </div>
   );

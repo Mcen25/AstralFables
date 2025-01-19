@@ -12,7 +12,7 @@ export default defineConfig({
       }
     }
   },
-  assetsInclude: ['**/*.gltf', '**/*.bin'],
+  assetsInclude: ['**/*.gltf', '**/*.bin', '**/.png', '**/*.jpeg'],
   build: {
     target: 'esnext'
   }
