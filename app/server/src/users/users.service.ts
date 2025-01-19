@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { ObjectId } from 'mongodb';
 import { Users } from './schemas/users.schema';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UsersService {
@@ -21,9 +22,12 @@ export class UsersService {
     return this.usersRepo.findOneBy({ _id: new ObjectId(id) } as any);
   }
 
-  async create(createUsersDto: Partial<Users>) {
-    const user = this.usersRepo.create(createUsersDto);
-    return await this.usersRepo.save(user);
+  async create(createUserDto: Partial<Users>) {
+    const hashedPassword = await bcrypt.hash(createUserDto.password, 10);
+    return this.usersRepo.save({
+      ...createUserDto,
+      password: hashedPassword,
+    });
   }
 
   async update(id: string, userData: Partial<Users>) {
