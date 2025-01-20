@@ -43,4 +43,18 @@ export class UsersService {
   remove(id: string) {
     return this.usersRepo.delete({ _id: new ObjectId(id) } as any);
   }
+
+  async findOrCreateGoogleUser(profile: any): Promise<Users> {
+    let user = await this.usersRepo.findOne({ where: { email: profile.email } });
+    if (!user) {
+      user = this.usersRepo.create({
+        username: profile.firstName,
+        email: profile.email,
+        provider: 'google',
+        providerId: profile.sub,
+      });
+      await this.usersRepo.save(user);
+    }
+    return user;
+  }
 }

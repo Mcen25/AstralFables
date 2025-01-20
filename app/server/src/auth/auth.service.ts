@@ -40,4 +40,16 @@ export class AuthService {
       username: user.username,
     };
   }
+  
+  async validateGoogleUser(profile: any): Promise<any> {
+    const user = await this.usersService.findOrCreateGoogleUser(profile);
+    return user;
+  }
+
+  async login(user: any) {
+    const payload = { username: user.username, sub: user.userId };
+    return {
+      accessToken: this.jwtService.sign(payload),
+    };
+  }
 }

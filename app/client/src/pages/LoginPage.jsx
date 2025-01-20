@@ -26,13 +26,17 @@ export default function LoginPage() {
         <div className={styles.section}>
           <div className={styles.loginSection}>
             <h2>Login</h2>
-
             <h3>Email</h3>
             <input type="text" placeholder="Enter your email" />
             <h3>Password</h3>
             <input type="password" placeholder="Enter your password" />
           </div>
           <button className={styles.loginMainButton}>LOGIN</button>
+          <div className={styles.forgotPassword}>
+            <A href="/forgot-password" className={styles.forgotPasswordLink}>
+              Forgot your password?
+            </A>
+          </div>
           <div className={styles.horizontalLineContainer}>
             <hr className={styles.horizontalLine} />
             <span className={styles.horizontalLineText}>or</span>

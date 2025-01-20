@@ -13,7 +13,7 @@ export default function RegisterAccount() {
   };
 
   const handleGoogleLogin = () => {
-    // Handle Google login
+    window.location.href = 'http://localhost:4000/auth/google';
   };
 
   const handleMicrosoftLogin = () => {
