@@ -1,7 +1,7 @@
-import styles from "./HomePage.module.css";
-import Navbar from "../components/NavBar";
-import ThreeScene from "../components/ThreeScene";
-import GLTFViewer from "../components/GLTFViewer";
+import styles from "./content.module.css";
+import Navbar from "../../components/NavBar";
+import ThreeScene from "../../components/ThreeScene";
+import GLTFViewer from "../../components/GLTFViewer";
 
 export default function BlackHolePage() {
   return (

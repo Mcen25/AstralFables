@@ -15,6 +15,7 @@ export default function ContentPage() {
       <div class={styles.graph}>
         <div class={styles.columnContainer}>
           <div class={styles.leftSection}> 
+            <h2>Search</h2>
             <input type="text" placeholder="Search" class={styles.search}/>
             <h2>Tags</h2>
             <div class={styles.checkboxContainer}>
