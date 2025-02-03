@@ -1,8 +1,8 @@
-import { createSignal, onMount } from "solid-js";
+import { createSignal, onMount, onCleanup } from "solid-js";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { TextureLoader } from 'three/src/loaders/TextureLoader';
+import { TextureLoader } from "three/src/loaders/TextureLoader";
 
 const GLTFPage = (props) => {
   const [loading, setLoading] = createSignal(true);
@@ -11,9 +11,14 @@ const GLTFPage = (props) => {
 
   onMount(() => {
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
     const renderer = new THREE.WebGLRenderer({ antialias: true });
-    
+
     renderer.setSize(window.innerWidth, window.innerHeight);
     container.appendChild(renderer.domElement);
 
@@ -29,13 +34,15 @@ const GLTFPage = (props) => {
 
     // Texture loader
     const textureLoader = new TextureLoader();
-    const earthTexture = textureLoader.load('/src/assets/earth/textures/Material.002_diffuse.jpeg');
+    const earthTexture = textureLoader.load(
+      "/src/assets/earth/textures/Material.002_diffuse.jpeg"
+    );
 
     // Material
     const earthMaterial = new THREE.MeshStandardMaterial({
       map: earthTexture,
       roughness: 1,
-      metalness: 0
+      metalness: 0,
     });
 
     let material;
@@ -45,7 +52,7 @@ const GLTFPage = (props) => {
       material = new THREE.MeshStandardMaterial({
         map: texture,
         roughness: 1,
-        metalness: 0
+        metalness: 0,
       });
     }
 
@@ -60,7 +67,7 @@ const GLTFPage = (props) => {
             }
           });
         }
-        
+
         scene.add(gltf.scene);
 
         const box = new THREE.Box3().setFromObject(gltf.scene);
@@ -99,10 +106,10 @@ const GLTFPage = (props) => {
       renderer.setSize(window.innerWidth, window.innerHeight);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     onCleanup(() => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
       controls.dispose();
       renderer.dispose();
     });
